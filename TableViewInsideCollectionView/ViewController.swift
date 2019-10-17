@@ -37,7 +37,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let number = Int.random(in: 5 ..< 20) // Random number of row
+        let number = Int.random(in: 1 ..< 10) // Random number of row
         
         return number
     }
@@ -47,5 +47,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         for: indexPath) as? TableViewCell
         
         return cell!
+    }
+
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
