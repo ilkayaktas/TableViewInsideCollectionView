@@ -35,8 +35,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pB5-ay-3gz">
-                                                    <rect key="frame" x="0.0" y="8" width="398" height="305"/>
+                                                    <rect key="frame" x="0.0" y="8" width="194" height="211"/>
+                                                    <subviews>
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3HD-AY-O33">
+                                                            <rect key="frame" x="10" y="10" width="174" height="191"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <prototypes>
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableviewCell" id="GiM-MT-7j4" customClass="TableViewCell" customModule="TableViewInsideCollectionView" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="28" width="174" height="43.666667938232422"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GiM-MT-7j4" id="9yP-CS-bN2">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="174" height="43.666667938232422"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </tableViewCellContentView>
+                                                                </tableViewCell>
+                                                            </prototypes>
+                                                        </tableView>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="3HD-AY-O33" secondAttribute="bottom" constant="10" id="AIX-lD-D9T"/>
+                                                        <constraint firstItem="3HD-AY-O33" firstAttribute="leading" secondItem="pB5-ay-3gz" secondAttribute="leading" constant="10" id="BeI-0O-hcj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3HD-AY-O33" secondAttribute="trailing" constant="10" id="I9I-96-clJ"/>
+                                                        <constraint firstItem="3HD-AY-O33" firstAttribute="top" secondItem="pB5-ay-3gz" secondAttribute="top" constant="10" id="VZY-Qp-2dI"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -47,6 +70,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="194" height="219"/>
+                                        <connections>
+                                            <outlet property="tableView" destination="3HD-AY-O33" id="3tq-12-dob"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

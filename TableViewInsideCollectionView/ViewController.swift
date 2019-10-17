@@ -24,6 +24,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? CollectionViewCell
         
+        cell?.tableView.delegate = self
+        cell?.tableView.dataSource = self
         return cell!
     }
     
@@ -31,6 +33,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: collectionView.frame.size.width - 50, height: collectionView.frame.size.height)
     }
 
-
 }
 
+extension ViewController: UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let number = Int.random(in: 5 ..< 20) // Random number of row
+        
+        return number
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableviewCell",
+        for: indexPath) as? TableViewCell
+        
+        return cell!
+    }
+}
